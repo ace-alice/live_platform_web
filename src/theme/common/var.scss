@@ -1,0 +1,20 @@
+/* 定义初始颜色
+------------------------------- */
+
+$color-white: #fff;
+$color-theme-primary: #fe5e00;
+$color-theme-second: #fecb00;
+$color-bg-primary: #262d34;
+$color-bg-second: #181c22;
+$color-success: #0ea93e;
+$color-modal-bg-primary: #383e45;
+
+:root {
+  --color-white: #{$color-white};
+  --color-theme-primary: #{$color-theme-primary};
+  --color-theme-second: #{$color-theme-second};
+  --color-bg-primary: #{$color-bg-primary};
+  --color-bg-second: #{$color-bg-second};
+  --color-success: #{$color-success};
+  --color-modal-bg-primary: #{$color-modal-bg-primary};
+}

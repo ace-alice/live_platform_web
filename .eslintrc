@@ -1,0 +1,8 @@
+{
+  "extends": "@antfu",
+  "rules": {
+    "curly": ["error", "all"],
+    "vue/v-on-event-hyphenation": ["off"],
+    "vue/require-component-is": ["off"]
+  }
+}

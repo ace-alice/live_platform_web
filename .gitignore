@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+dist*
+dist-ssr
+*.local
+.eslintcache
+.stylelintcache
+src/assets/sprites/*.*
+!src/assets/sprites/.gitkeep
+public/icons
+IA-ESPORT-WEB-DIST*
+gametob_pc*
+.vscode
+.ide
