@@ -1,6 +1,6 @@
 import compression from 'vite-plugin-compression'
 
-export default function createCompression(env) {
+export default function createCompression(env: any) {
   const { VITE_BUILD_COMPRESS } = env
   const compressList = VITE_BUILD_COMPRESS.split(',')
   const plugin: any[] = []
@@ -8,8 +8,8 @@ export default function createCompression(env) {
     plugin.push(
       compression({
         ext: '.gz',
-        deleteOriginFile: false,
-      }),
+        deleteOriginFile: false
+      })
     )
   }
   if (compressList.includes('brotli')) {
@@ -17,8 +17,8 @@ export default function createCompression(env) {
       compression({
         ext: '.br',
         algorithm: 'brotliCompress',
-        deleteOriginFile: false,
-      }),
+        deleteOriginFile: false
+      })
     )
   }
   return plugin

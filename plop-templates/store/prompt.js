@@ -1,28 +1,27 @@
-module.exports = {
-  description: '创建全局状态',
-  prompts: [
+export const description = '创建全局状态'
+export const prompts = [
+  {
+    type: 'input',
+    name: 'name',
+    message: '请输入模块名称',
+    validate: (v) => {
+      if (!v || v.trim === '') {
+        return '模块名称不能为空'
+      } else {
+        return true
+      }
+    }
+  }
+]
+export function actions() {
+  const actions = [
     {
-      type: 'input',
-      name: 'name',
-      message: '请输入模块名称',
-      validate: (v) => {
-        if (!v || v.trim === '') {
-          return '模块名称不能为空'
-        }
-        else {
-          return true
-        }
-      },
-    },
-  ],
-  actions: () => {
-    const actions = [
-      {
-        type: 'add',
-        path: 'src/store/modules/{{camelCase name}}.ts',
-        templateFile: 'plop-templates/store/index.hbs',
-      },
-    ]
-    return actions
-  },
+      type: 'add',
+      path: 'src/store/modules/{{camelCase name}}.ts',
+      templateFile: 'plop-templates/store/index.hbs'
+    }
+  ]
+  return actions
 }
+
+export default { description, prompts, actions }

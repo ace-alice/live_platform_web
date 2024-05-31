@@ -1,40 +1,40 @@
-import '@/utils/initEnterData'
+import './theme/index.scss'
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import ElementPlus from 'element-plus'
-import mitt from 'mitt'
+import { registerSW } from 'virtual:pwa-register'
+import 'virtual:svg-icons-register'
 import App from './App.vue'
 import router from './router'
-import Tooltip from './directives/tooltip'
+import mitt from 'mitt'
 import { i18n } from '@/locale'
-import '@/utils/flexible'
+import 'xgplayer/dist/index.min.css'
+import ElementPlus from 'element-plus'
 
-import 'normalize.css/normalize.css'
+import 'element-plus/dist/index.css'
 
+// 引入字体
 import './assets/fonts/index.scss'
 
+// 路由守卫
 import './guard'
 
-// 引入event-bus方法
-
-import LazyImage from '@/components/lazyImage/index.vue'
+// 注册SW 并自动更新提示
+registerSW({ immediate: true })
 
 // 引入全局样式
 import '@/theme/index.scss'
 
+// 处理dom的默认行为
 import 'default-passive-events'
 
-// 引入你需要的组件
-import 'element-plus/dist/index.css'
-
-const pinia = createPinia()
-
 const app = createApp(App)
+
 // 注册全局 event mitt方法
 app.config.globalProperties.mittBus = mitt()
 
-app.directive('tooltip', Tooltip)
-
-app.component('LazyImage', LazyImage)
-
-app.use(pinia).use(router).use(ElementPlus).use(i18n).mount('#app')
+app.use(createPinia())
+app.use(router).use(i18n)
+app.use(i18n)
+app.use(ElementPlus)
+app.mount('#app')

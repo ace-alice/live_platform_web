@@ -11,42 +11,37 @@ import rootTh from './lang/th-TH'
 import rootVi from './lang/vi-VN'
 import { getLocal, setLocal } from '@/utils/storage'
 import { LangCode } from '@/enum'
-import { GetParam } from '@/utils/getCommonInfo'
 
 const messages = {
   'zh-CN': {
-    ...rootZhCn,
+    ...rootZhCn
   },
   'zh-TW': {
-    ...rootZhTw,
+    ...rootZhTw
   },
   'en-US': {
-    ...rootEn,
+    ...rootEn
   },
   'th-TH': {
-    ...rootTh,
+    ...rootTh
   },
   'in-ID': {
-    ...rootId,
+    ...rootId
   },
   'vi-VN': {
-    ...rootVi,
+    ...rootVi
   },
   'ja-JP': {
-    ...rootJp,
+    ...rootJp
   },
   'ko-KR': {
-    ...rootKo,
-  },
+    ...rootKo
+  }
 }
 
-if (!getLocal('lang') && GetParam(window.location.href, 'lang')) {
-  setLocal('lang', Number(GetParam(window.location.href, 'lang')))
-}
+const langId = Number(getLocal('lang') || 1)
 
-const langId = Number(
-  getLocal('lang') || GetParam(window.location.href, 'lang') || 1,
-)
+setLocal('lang', langId)
 
 // 导出语言国际化
 export const i18n = createI18n({
@@ -54,7 +49,7 @@ export const i18n = createI18n({
   locale: LangCode[Number(langId)],
   fallbackLocale: LangCode[Number(langId)],
   warnHtmlMessage: 'off',
-  messages,
+  messages
 })
 
 export function setLocale() {

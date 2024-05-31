@@ -1,0 +1,44 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "eslint.debug": true,
+  "eslint.format.enable": true,
+  "eslint.ignoreUntitled": true,
+  "eslint.experimental.useFlatConfig": false,
+  // "eslint.nodePath": "/Users/Hector/.nvm/versions/node/v20.12.2/bin/eslint",
+  "eslint.lintTask.enable": true,
+  "eslint.problems.shortenToSingleLine": true,
+  "eslint.quiet": true,
+  "eslint.run": "onSave",
+  "cSpell.words": [
+    "brotli",
+    "composables",
+    "cssnano",
+    "Cssnext",
+    "danmu",
+    "iconify",
+    "miniplayer",
+    "miniprogress",
+    "miniscreen",
+    "nightwatch",
+    "pinia",
+    "precomposed",
+    "preinstall",
+    "pxtorem",
+    "rushstack",
+    "stylelint",
+    "swiper",
+    "tsbuildinfo",
+    "unplugin",
+    "xgplayer"
+  ],
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

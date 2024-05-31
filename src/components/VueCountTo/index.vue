@@ -1,9 +1,6 @@
 <script lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
-import {
-  cancelAnimationFrame,
-  requestAnimationFrame,
-} from './requestAnimationFrame'
+import { cancelAnimationFrame, requestAnimationFrame } from './animationFrame'
 
 export default {
   name: 'VueCountTo',
@@ -11,22 +8,22 @@ export default {
     startVal: {
       type: Number,
       required: false,
-      default: 0,
+      default: 0
     },
     endVal: {
       type: Number,
       required: false,
-      default: 2017,
+      default: 2017
     },
     duration: {
       type: Number,
       required: false,
-      default: 500,
+      default: 500
     },
     autoplay: {
       type: Boolean,
       required: false,
-      default: true,
+      default: true
     },
     decimals: {
       type: Number,
@@ -34,39 +31,39 @@ export default {
       default: 2,
       validator(value: number) {
         return value >= 0
-      },
+      }
     },
     decimal: {
       type: String,
       required: false,
-      default: '.',
+      default: '.'
     },
     separator: {
       type: String,
       required: false,
-      default: ',',
+      default: ','
     },
     prefix: {
       type: String,
       required: false,
-      default: '',
+      default: ''
     },
     suffix: {
       type: String,
       required: false,
-      default: '',
+      default: ''
     },
     useEasing: {
       type: Boolean,
       required: false,
-      default: true,
+      default: true
     },
     easingFn: {
       type: Function,
       default(t: number, b: number, c: number, d: number) {
         return (c * (-(2 ** ((-10 * t) / d)) + 1) * 1024) / 1023 + b
-      },
-    },
+      }
+    }
   },
   emits: ['callback', 'mountedCallback'],
   setup(props: any, { emit }: any) {
@@ -98,7 +95,7 @@ export default {
       startTime: null,
       timestamp: null,
       remaining: null,
-      rAF: null,
+      rAF: null
     }
 
     function start() {
@@ -123,52 +120,38 @@ export default {
 
       if (props.useEasing) {
         if (countDown.value) {
-          state.printVal
-            = state.localStartVal
-            - props.easingFn(
-              progress,
-              0,
-              state.localStartVal - props.endVal,
-              state.localDuration,
-            )
-        }
-        else {
+          state.printVal =
+            state.localStartVal -
+            props.easingFn(progress, 0, state.localStartVal - props.endVal, state.localDuration)
+        } else {
           state.printVal = props.easingFn(
             progress,
             state.localStartVal,
             props.endVal - state.localStartVal,
-            state.localDuration,
+            state.localDuration
           )
         }
-      }
-      else {
+      } else {
         if (countDown.value) {
-          state.printVal
-            = state.localStartVal
-            - (state.localStartVal - props.endVal)
-              * (progress / state.localDuration)
-        }
-        else {
-          state.printVal
-            = state.localStartVal
-            + (props.endVal - state.localStartVal)
-              * (progress / state.localDuration)
+          state.printVal =
+            state.localStartVal -
+            (state.localStartVal - props.endVal) * (progress / state.localDuration)
+        } else {
+          state.printVal =
+            state.localStartVal +
+            (props.endVal - state.localStartVal) * (progress / state.localDuration)
         }
       }
       if (countDown.value) {
-        state.printVal
-          = state.printVal < props.endVal ? props.endVal : state.printVal
-      }
-      else {
-        state.printVal
-          = state.printVal > props.endVal ? props.endVal : state.printVal
+        state.printVal = state.printVal < props.endVal ? props.endVal : state.printVal
+      } else {
+        state.printVal = state.printVal > props.endVal ? props.endVal : state.printVal
       }
 
       displayValue.value = formatNumber(state.printVal)
       if (progress < state.localDuration) {
         state.rAF = requestAnimationFrame(count)
-      }
-      else {
+      } else {
         emit('callback')
       }
     }
@@ -187,8 +170,7 @@ export default {
       if (state.paused) {
         resume()
         state.paused = false
-      }
-      else {
+      } else {
         pause()
         state.paused = true
       }
@@ -206,7 +188,7 @@ export default {
         if (props.autoplay) {
           start()
         }
-      },
+      }
     )
 
     watch(
@@ -215,7 +197,7 @@ export default {
         if (props.autoplay) {
           start()
         }
-      },
+      }
     )
 
     onMounted(() => {
@@ -230,7 +212,7 @@ export default {
     })
 
     return { displayValue }
-  },
+  }
 }
 </script>
 

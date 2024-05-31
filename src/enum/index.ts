@@ -17,7 +17,7 @@ export enum NumberCn {
   十三,
   十四,
   十五,
-  十六,
+  十六
 }
 
 export enum LangCode {
@@ -28,18 +28,5 @@ export enum LangCode {
   'vi-VN',
   'in-ID',
   'ja-JP',
-  'ko-KR',
-}
-
-export enum CategoryIdName {
-  'normal_bet' = 1,
-  'fix_bet',
-  'live_bet',
-  'champion_bet',
-  'parlay_game',
-}
-
-export enum resultStatus {
-  '未开始' = 1,
-  '已结束' = 2,
+  'ko-KR'
 }
