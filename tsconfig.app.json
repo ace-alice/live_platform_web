@@ -1,6 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "./typed-router.d.ts", "auto-imports.d.ts"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "typed-router.d.ts", "auto-imports.d.ts"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "target": "ESNext",
@@ -23,7 +23,7 @@
       "vite-plugin-vue-layouts/client",
       "vite-plugin-pwa/info.d.ts",
       "vite-plugin-pwa/client.d.ts",
-      "vite-plugin-svg-icons/client",
+      // "vite-plugin-svg-icons/client",
       "unplugin-vue-router/client"
     ],
     "baseUrl": ".",
