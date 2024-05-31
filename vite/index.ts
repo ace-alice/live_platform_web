@@ -2,8 +2,6 @@ import createAutoImport from './plugins/auto-import'
 import createComponents from './plugins/components'
 import createBanner from './plugins/banner'
 import createHtml from './plugins/html'
-import createLayouts from './plugins/layouts'
-import createPages from './plugins/pages'
 import createCompression from './plugins/compression'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import createSetupExtend from './plugins/setup-extend'
@@ -18,6 +16,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default function createVitePlugins(viteEnv: Record<string, string>, isBuild = false) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
+    // routers(),
     vue(),
     vueJsx(),
     VueDevTools(),
@@ -44,9 +43,9 @@ export default function createVitePlugins(viteEnv: Record<string, string>, isBui
   // 注册使用svg雪碧图
   vitePlugins.push(createSvgIcon(isBuild))
   // 自动配置模版
-  vitePlugins.push(createLayouts())
+  // vitePlugins.push(createLayouts())
   // 自动配置路由
-  vitePlugins.push(createPages())
+  // vitePlugins.push(createPages())
   // 创建 banner
   vitePlugins.push(createBanner())
   // 脱离浏览器而显示为一个独立程序的样子使用

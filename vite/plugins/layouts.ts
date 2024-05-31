@@ -2,7 +2,10 @@ import Layouts from 'vite-plugin-vue-layouts'
 
 export default function createLayouts() {
   return Layouts({
-    defaultLayout: 'index'
+    layoutsDirs: 'src/layouts',
+    pagesDirs: 'src/pages',
+    defaultLayout: 'default',
+    importMode: () => 'async'
   })
 }
 

@@ -1,4 +1,5 @@
 {
+  "typescript.preferences.autoImportFileExcludePatterns": ["vue-router"],
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
