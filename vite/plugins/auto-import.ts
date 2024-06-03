@@ -1,4 +1,5 @@
 import autoImport from 'unplugin-auto-import/vite'
+// import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // import { VueRouterAutoImports } from 'unplugin-vue-router' // 帮助简化 Vue Router 的使用
 
 export default function createAutoImport() {
@@ -12,7 +13,8 @@ export default function createAutoImport() {
       //   'vue-router/auto': ['useLink']
       // }
     ],
-    dts: './src/types/auto-imports.d.ts',
-    dirs: ['../../src/utils/composables/**']
+    // resolvers: [ElementPlusResolver()],
+    dts: 'src/types/auto-imports.d.ts',
+    include: [/\.vue$/, /\.vue\?vue/, /\.md$/]
   })
 }

@@ -7,15 +7,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
     Iconify: typeof import('./../components/Iconify/index.vue')['default']
     LiveBox: typeof import('./../components/LiveBox/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SvgIcon: typeof import('./../components/single/SvgIcon.vue')['default']
-    TestIndex: typeof import('./../components/TestComponent/TestIndex.vue')['default']
-    TheWelcome: typeof import('./../components/TheWelcome.vue')['default']
+    SvgIcon: typeof import('./../components/SvgIcon/index.vue')['default']
     VueCountTo: typeof import('./../components/VueCountTo/index.vue')['default']
-    WelcomeItem: typeof import('./../components/WelcomeItem.vue')['default']
   }
 }

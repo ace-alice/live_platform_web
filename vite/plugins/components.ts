@@ -5,7 +5,7 @@ export default function createComponents() {
   return components({
     dirs: ['src/components'],
     include: [/\.vue$/, /\.vue\?vue/, /\.tsx$/],
-    dts: '../../src/types/components.d.ts'
+    dts: 'src/types/components.d.ts'
     // resolvers: [ElementPlusResolver()] // 集成 element-plus
   })
 }
