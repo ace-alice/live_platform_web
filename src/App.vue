@@ -3,10 +3,6 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <!-- <header>
-    <SvgIcon name="test"></SvgIcon>
-  </header> -->
-
   <RouterView />
 </template>
 

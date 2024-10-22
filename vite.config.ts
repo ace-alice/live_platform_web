@@ -42,7 +42,7 @@ export default ({ mode, command }: any) => {
       target: ['es2015', 'ios11'],
       terserOptions: {
         compress: {
-          drop_console: env.NODE_ENV !== 'fat', // 移除 console 输出
+          drop_console: env.NODE_ENV !== 'dev', // 移除 console 输出
           drop_debugger: true, // 移除 debugger 语句
           pure_funcs: ['console.log'], // 移除指定函数调用
           passes: 2 // 压缩时进行多次优化传递
@@ -55,7 +55,7 @@ export default ({ mode, command }: any) => {
         }
       }
       // rollupOptions: {
-      //   external: ['axios'] // 这些库将不会打包进项目  配合 createHtmlPlugin中配置的cdn使用
+      //   external: ['swiper'] // 这些库将不会打包进项目  配合 createHtmlPlugin中配置的cdn使用
       // }
     },
     define: {
@@ -73,8 +73,7 @@ export default ({ mode, command }: any) => {
       alias: {
         '@': path.resolve(__dirname, 'src'),
         '#': path.resolve(__dirname, 'src/types')
-        // 防止 Vite 打包这些库 修改项目中引入的地址 配合 createHtmlPlugin中配置的cdn使用
-        // axios: 'https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js'
+        // swiper: 'https://cdn.jsdelivr.net/npm/swiper@11.1.3/swiper-bundle.min.js'
       }
     },
     css: {

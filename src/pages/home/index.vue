@@ -1,6 +1,16 @@
 <script setup lang="ts" name="Home">
 import normalMessage from '@/messages/normalMessage'
 import messageImage from '@/assets/images/avatar.png'
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue'
+// Import Swiper styles
+import 'swiper/css'
+const onSwiper = (swiper: any) => {
+  console.log(swiper)
+}
+const onSlideChange = () => {
+  console.log('slide change')
+}
 </script>
 
 <template>
@@ -17,14 +27,31 @@ import messageImage from '@/assets/images/avatar.png'
     </div>
     <div>
       <SvgIcon
-        @click="() => $router.push('/match')"
-        name="community"
+        @click="() => $router.push('/about-us')"
+        name="logo"
         color="#fff"
         height="40px"
         width="40px"
       />
     </div>
-    <LiveBox url="http://127.0.0.1/live/livestream.m3u8" />
+    <div>
+      <swiper
+        :slides-per-view="3"
+        :space-between="50"
+        @swiper="onSwiper"
+        @slideChange="onSlideChange"
+      >
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 4</swiper-slide>
+        <swiper-slide>Slide 5</swiper-slide>
+        <swiper-slide>Slide 6</swiper-slide>
+        <swiper-slide>Slide 7</swiper-slide>
+        <swiper-slide>Slide 8</swiper-slide>
+        <swiper-slide>Slide 9</swiper-slide>
+      </swiper>
+    </div>
   </div>
 </template>
 

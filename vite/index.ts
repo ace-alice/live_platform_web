@@ -10,10 +10,13 @@ import createVitePWA from './plugins/VitePWA'
 import createMkcert from './plugins/mkcert'
 import createSvgIcon from './plugins/svg-icon'
 import cdnImport from './plugins/cnd-import'
+// import createLayouts from './plugins/layouts'
 
 import type { PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+// import createPages from './plugins/pages'
+// import routers from './plugins/routers'
 
 export default function createVitePlugins(
   viteEnv: Record<string, string>,

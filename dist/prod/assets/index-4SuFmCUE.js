@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper-BCo6x5W8.js";const o={class:"about-us"},t=e({},[["render",function(e,t){return Vue.openBlock(),Vue.createElementBlock("div",o,"AboutUs")}],["__scopeId","data-v-a6f8776b"]]);export{t as default};

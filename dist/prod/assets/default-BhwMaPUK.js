@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper-BCo6x5W8.js";const t={},o=Vue.createElementVNode("div",{class:"layout-default"},"LayoutDefault",-1),u=e(t,[["render",function(e,t){const u=Vue.resolveComponent("router-view");return Vue.openBlock(),Vue.createElementBlock(Vue.Fragment,null,[o,Vue.createVNode(u)],64)}]]);export{u as default};

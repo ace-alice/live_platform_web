@@ -24,24 +24,16 @@ const router = createRouter({
       ]
     },
     {
-      path: '/live',
-      name: 'LiveIndex',
+      path: '/about-us',
+      name: 'AboutUsIndex',
       component: () => import('@/layouts/layout01.vue'),
       children: [
         {
           path: '',
-          component: () => import('@/pages/live/index.vue'),
-          name: 'Live',
+          component: () => import('@/pages/about-us/index.vue'),
+          name: 'AboutUs',
           meta: {
-            title: 'router.live'
-          }
-        },
-        {
-          path: ':name',
-          component: () => import('@/pages/live/[name]/index.vue'),
-          name: 'LiveName',
-          meta: {
-            title: 'router.live_name'
+            title: 'router.about_us'
           }
         }
       ]

@@ -1,4 +1,5 @@
 import { createHtmlPlugin } from 'vite-plugin-html'
+import { ref } from 'vue'
 
 export default function createHtml(env: any, isBuild: boolean) {
   const { VITE_APP_TITLE } = env
@@ -14,10 +15,18 @@ export default function createHtml(env: any, isBuild: boolean) {
       tags: [
         // {
         //   injectTo: 'head',
+        //   tag: 'link',
+        //   attrs: {
+        //     ref: 'stylesheet',
+        //     href: 'https://cdn.jsdelivr.net/npm/swiper@11.1.3/swiper-bundle.min.css'
+        //   }
+        // },
+        // {
+        //   injectTo: 'head',
         //   tag: 'script',
         //   attrs: {
-        //     id: 'axios-script',
-        //     src: 'https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js'
+        //     id: 'swiper-script',
+        //     src: 'https://cdn.jsdelivr.net/npm/swiper@11.1.3/swiper-bundle.min.js'
         //   }
         // }
       ]
