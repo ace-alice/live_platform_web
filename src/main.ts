@@ -12,6 +12,8 @@ import 'xgplayer/dist/index.min.css'
 import ElementPlus from 'element-plus'
 
 import 'element-plus/dist/index.css'
+// 如果需要套壳（flutter）
+// import './tools/js_bridge'
 
 // 引入字体
 import './assets/fonts/index.scss'
