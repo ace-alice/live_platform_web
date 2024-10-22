@@ -150,6 +150,9 @@ importers:
       vite-plugin-banner:
         specifier: ^0.7.1
         version: 0.7.1
+      vite-plugin-cdn2:
+        specifier: ^1.1.0
+        version: 1.1.0(rollup@4.17.2)
       vite-plugin-compression:
         specifier: ^0.5.1
         version: 0.5.1(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))
@@ -1751,6 +1754,63 @@ packages:
 
   '@vueuse/shared@9.13.0':
     resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
+
+  '@xn-sakina/rml-darwin-arm64@2.5.0':
+    resolution: {integrity: sha512-JC1ODK8KdsrtadS/efvIXVAknllyLjt7Aov67TymUwD9sqZMQUivziPmsKrdh8FO2a7vxSZoSzuokWVEN0xgdw==}
+    engines: {node: '>=14'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@xn-sakina/rml-darwin-x64@2.5.0':
+    resolution: {integrity: sha512-OgZ8MTSD9PPwAhbeXV0s3u1QhsUQloBgrIk9OWNqwgtvqJLZhlASmFXGRIntbZnlYgySyV9rhxJfXZkCrIL8Cg==}
+    engines: {node: '>=14'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@xn-sakina/rml-linux-arm-gnueabihf@2.5.0':
+    resolution: {integrity: sha512-/ns7pt0KRWUuhjdCoQuGBKVH0O8bXyc3UKcvbsHCxCq3+6XwcErijt0n6DGkBblo8iWKV03rLOquRGjcgHxVtg==}
+    engines: {node: '>=14'}
+    cpu: [arm]
+    os: [linux]
+
+  '@xn-sakina/rml-linux-arm64-gnu@2.5.0':
+    resolution: {integrity: sha512-BwVelPhv554HaF2m/ztoAi47WXehBT+jlNguH2bFBoQ/ZCFJzvvygQ4DgSBN5GnoWjdTB3K6gUB2UHnVPuaRHg==}
+    engines: {node: '>=14'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@xn-sakina/rml-linux-arm64-musl@2.5.0':
+    resolution: {integrity: sha512-4U+djV+229GpZP5aXHq2oNSeyrg2lXGqe3gFVGy1Ag3uw1+Q2wLrHB1D6D4Vhx2pporH+/nJ92Tldz3lnhP1vw==}
+    engines: {node: '>=14'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@xn-sakina/rml-linux-x64-gnu@2.5.0':
+    resolution: {integrity: sha512-9I09DOuAaQX8AfsLJaqy7kC20LHRSaZgVj1q6oHa5Z2ChE7GAUE9KQpel2RRKS/gQzwArsACMsdkQ8KrOUMS2A==}
+    engines: {node: '>=14'}
+    cpu: [x64]
+    os: [linux]
+
+  '@xn-sakina/rml-linux-x64-musl@2.5.0':
+    resolution: {integrity: sha512-QoVii5PTvTrWcKZEUp1lMsr3WlxmN84RgQqr7kjngIhWEqWiWWUUQ3se7y848+pAVGvJsqw44Cy0MdfyJyuexQ==}
+    engines: {node: '>=14'}
+    cpu: [x64]
+    os: [linux]
+
+  '@xn-sakina/rml-wasm@2.5.0':
+    resolution: {integrity: sha512-S9dFEB8jxxwarcSNh/sEcpRapB11RsZzOW6Bl3VgcJZTHKm+y61we4weu+tipAUwjmmCnXyOuqqydm8E8wSNsA==}
+
+  '@xn-sakina/rml-win32-arm64-msvc@2.5.0':
+    resolution: {integrity: sha512-Y9+WXxLSuW23/7d36i5uJeOJkxKVPpLTp7w6lpPXOTP19bIfDKGhhNEQ3+r1eBU4cOf9xsScGA5jcaMGdFtcjA==}
+    engines: {node: '>=14'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@xn-sakina/rml-win32-x64-msvc@2.5.0':
+    resolution: {integrity: sha512-MCdLOANVS4gVrkRaZ9UIC2ZU7yGVNUXuxFhrnp6SlNqa7u5Dy1TPJ2SnCXjddt1GzBW/1r+1NckzmPuSVkExvg==}
+    engines: {node: '>=14'}
+    cpu: [x64]
+    os: [win32]
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -4338,6 +4398,10 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
+  rs-module-lexer@2.5.0:
+    resolution: {integrity: sha512-ACmfiSoXYtAG9F3ySSvLwRrLHhfEaQCsk4mytaSFEHI5mKYXZUzsQI9aF4Wy4R8U7VMFLm4DgccEWbDpw0hs6g==}
+    engines: {node: '>=14'}
+
   run-applescript@7.0.0:
     resolution: {integrity: sha512-9by4Ij99JUr/MCFBUkDKLWK3G9HVXmabKz9U5MlIAIuvuzkiOicRYs8XJLxX+xahD+mLiiCYDqF9dKAgtzKP1A==}
     engines: {node: '>=18'}
@@ -4892,6 +4956,9 @@ packages:
   vite-plugin-banner@0.7.1:
     resolution: {integrity: sha512-Bww2Xd5tOGsZ1yZ9rQiGneryvsL1u86znPrqeQjCsXPsG72pnSdV5lcQA+cy8UNDguMqyTJiCevlNUbLnT85UA==}
 
+  vite-plugin-cdn2@1.1.0:
+    resolution: {integrity: sha512-mqz9frTLpwT7XVuJppb/OmsEaJOxcY5Xt/+VOeewQAJTsl91TZe1ySv+YyoQbVn+BQbamNHZbUteIuoQzRFdpQ==}
+
   vite-plugin-compression@0.5.1:
     resolution: {integrity: sha512-5QJKBDc+gNYVqL/skgFAP81Yuzo9R+EAf19d+EtsMF/i8kFUpNi3J/H01QD3Oo8zBQn+NzoCIFkpPLynoOzaJg==}
     peerDependencies:
@@ -5250,7 +5317,7 @@ snapshots:
 
   '@babel/helper-builder-binary-assignment-operator-visitor@7.22.15':
     dependencies:
-      '@babel/types': 7.24.5
+      '@babel/types': 7.24.6
 
   '@babel/helper-compilation-targets@7.23.6':
     dependencies:
@@ -5369,7 +5436,7 @@ snapshots:
     dependencies:
       '@babel/helper-function-name': 7.23.0
       '@babel/template': 7.24.0
-      '@babel/types': 7.24.5
+      '@babel/types': 7.24.6
 
   '@babel/helpers@7.24.5':
     dependencies:
@@ -5680,7 +5747,7 @@ snapshots:
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-module-transforms': 7.24.5(@babel/core@7.24.5)
       '@babel/helper-plugin-utils': 7.24.5
-      '@babel/helper-validator-identifier': 7.24.5
+      '@babel/helper-validator-identifier': 7.24.6
 
   '@babel/plugin-transform-modules-umd@7.24.1(@babel/core@7.24.5)':
     dependencies:
@@ -5921,7 +5988,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.24.5
       '@babel/helper-plugin-utils': 7.24.5
-      '@babel/types': 7.24.5
+      '@babel/types': 7.24.6
       esutils: 2.0.3
 
   '@babel/regjsgen@0.8.0': {}
@@ -6914,6 +6981,35 @@ snapshots:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  '@xn-sakina/rml-darwin-arm64@2.5.0':
+    optional: true
+
+  '@xn-sakina/rml-darwin-x64@2.5.0':
+    optional: true
+
+  '@xn-sakina/rml-linux-arm-gnueabihf@2.5.0':
+    optional: true
+
+  '@xn-sakina/rml-linux-arm64-gnu@2.5.0':
+    optional: true
+
+  '@xn-sakina/rml-linux-arm64-musl@2.5.0':
+    optional: true
+
+  '@xn-sakina/rml-linux-x64-gnu@2.5.0':
+    optional: true
+
+  '@xn-sakina/rml-linux-x64-musl@2.5.0':
+    optional: true
+
+  '@xn-sakina/rml-wasm@2.5.0': {}
+
+  '@xn-sakina/rml-win32-arm64-msvc@2.5.0':
+    optional: true
+
+  '@xn-sakina/rml-win32-x64-msvc@2.5.0':
+    optional: true
 
   acorn-jsx@5.3.2(acorn@8.11.3):
     dependencies:
@@ -9786,6 +9882,18 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.17.2
       fsevents: 2.3.3
 
+  rs-module-lexer@2.5.0:
+    optionalDependencies:
+      '@xn-sakina/rml-darwin-arm64': 2.5.0
+      '@xn-sakina/rml-darwin-x64': 2.5.0
+      '@xn-sakina/rml-linux-arm-gnueabihf': 2.5.0
+      '@xn-sakina/rml-linux-arm64-gnu': 2.5.0
+      '@xn-sakina/rml-linux-arm64-musl': 2.5.0
+      '@xn-sakina/rml-linux-x64-gnu': 2.5.0
+      '@xn-sakina/rml-linux-x64-musl': 2.5.0
+      '@xn-sakina/rml-win32-arm64-msvc': 2.5.0
+      '@xn-sakina/rml-win32-x64-msvc': 2.5.0
+
   run-applescript@7.0.0: {}
 
   run-async@3.0.0: {}
@@ -10424,6 +10532,18 @@ snapshots:
       vite: 5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)
 
   vite-plugin-banner@0.7.1: {}
+
+  vite-plugin-cdn2@1.1.0(rollup@4.17.2):
+    dependencies:
+      '@babel/core': 7.24.5
+      '@rollup/pluginutils': 5.1.0(rollup@4.17.2)
+      '@xn-sakina/rml-wasm': 2.5.0
+      debug: 4.3.4
+      magic-string: 0.30.10
+      rs-module-lexer: 2.5.0
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
 
   vite-plugin-compression@0.5.1(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)):
     dependencies:

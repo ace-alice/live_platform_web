@@ -10,7 +10,17 @@ export default function createHtml(env: any, isBuild: boolean) {
     inject: {
       data: {
         title: VITE_APP_TITLE
-      }
+      },
+      tags: [
+        // {
+        //   injectTo: 'head',
+        //   tag: 'script',
+        //   attrs: {
+        //     id: 'axios-script',
+        //     src: 'https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js'
+        //   }
+        // }
+      ]
     },
     minify: isBuild
   })

@@ -9,24 +9,30 @@ import esbuild from 'rollup-plugin-esbuild'
 import createVitePWA from './plugins/VitePWA'
 import createMkcert from './plugins/mkcert'
 import createSvgIcon from './plugins/svg-icon'
+import cdnImport from './plugins/cnd-import'
 
 import type { PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
-export default function createVitePlugins(viteEnv: Record<string, string>, isBuild = false) {
+export default function createVitePlugins(
+  viteEnv: Record<string, string>,
+  isBuild = false,
+  command: any
+) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     // routers(),
     vue(),
     vueJsx(),
     VueDevTools(),
-    esbuild({
-      include: /\.[jt]sx?$/, // default
-      exclude: /node_modules/, // default
-      minify: viteEnv.NODE_ENV === 'production',
-      // target: 'default', // default, or 'es20XX', 'esnext'
-      define: { __VERSION__: '"xyz"' }
-    })
+    !isBuild &&
+      esbuild({
+        include: /\.[jt]sx?$/, // default
+        exclude: /node_modules/, // default
+        minify: false,
+        // target: 'default', // default, or 'es20XX', 'esnext'
+        define: { __VERSION__: '"xyz"' }
+      })
   ]
   // 入口文件注入内容
   vitePlugins.push(createHtml(viteEnv, isBuild))
@@ -50,6 +56,9 @@ export default function createVitePlugins(viteEnv: Record<string, string>, isBui
   vitePlugins.push(createBanner())
   // 脱离浏览器而显示为一个独立程序的样子使用
   vitePlugins.push(createVitePWA())
+
+  // cdn引入
+  isBuild && vitePlugins.push(cdnImport(command))
 
   return vitePlugins
 }
