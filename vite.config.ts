@@ -15,7 +15,7 @@ export default ({ mode, command }: any) => {
     // 开发服务器选项 https://cn.vitejs.dev/config/#server-options
     server: {
       open: true,
-      port: 9010,
+      port: Number(env.VITE_APP_PORT),
       proxy: {
         '/proxy': {
           target: env.VITE_APP_API_BASEURL,
@@ -37,12 +37,12 @@ export default ({ mode, command }: any) => {
     // 构建选项 https://cn.vitejs.dev/config/#server-fsserve-root
     build: {
       minify: 'terser',
-      outDir: `dist/${mode}`,
+      outDir: `dist/${env.VITE_OUTPUT_DIR}`,
       sourcemap: env.VITE_BUILD_SOURCEMAP === 'true',
       target: ['es2015', 'ios11'],
       terserOptions: {
         compress: {
-          drop_console: env.NODE_ENV !== 'dev', // 移除 console 输出
+          drop_console: env.NODE_ENV !== 'fat', // 移除 console 输出
           drop_debugger: true, // 移除 debugger 语句
           pure_funcs: ['console.log'], // 移除指定函数调用
           passes: 2 // 压缩时进行多次优化传递
@@ -66,7 +66,11 @@ export default ({ mode, command }: any) => {
           devDependencies: pkg.devDependencies
         },
         lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss')
-      })
+      }),
+      __VITE_CURRENCY: JSON.stringify('USDT'),
+      __VITE_CURRENCY_ICON: JSON.stringify('$'),
+      __VITE_NATION_CURRENCY: JSON.stringify('RMB'),
+      __VITE_NATION_CURRENCY_ICON: JSON.stringify('¥')
     },
     plugins: createVitePlugins(env, command === 'build' || command === 'build:all', command),
     resolve: {

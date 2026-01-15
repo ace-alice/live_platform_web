@@ -36,7 +36,7 @@ const onSlideChange = () => {
     </div>
     <div>
       <swiper
-        :slides-per-view="3"
+        :slides-per-view="1"
         :space-between="50"
         @swiper="onSwiper"
         @slideChange="onSlideChange"

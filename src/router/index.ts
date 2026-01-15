@@ -7,7 +7,23 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   // routes: setupLayouts(routes)
   routes: [
-    { path: '/', name: 'Index', redirect: '/home' },
+    { path: '/', name: 'Index', redirect: '/channel' },
+    {
+      path: '/channel',
+      name: 'Channel',
+      component: () => import('@/pages/channel/index.vue'),
+      redirect: '/channel/v/home',
+      children: [
+        {
+          path: 'v/:code',
+          component: () => import('@/pages/channel/code.vue'),
+          name: 'channelCode',
+          meta: {
+            title: 'router.home'
+          }
+        }
+      ]
+    },
     {
       path: '/home',
       name: 'HomeIndex',
@@ -19,21 +35,6 @@ const router = createRouter({
           name: 'Home',
           meta: {
             title: 'router.home'
-          }
-        }
-      ]
-    },
-    {
-      path: '/about-us',
-      name: 'AboutUsIndex',
-      component: () => import('@/layouts/layout01.vue'),
-      children: [
-        {
-          path: '',
-          component: () => import('@/pages/about-us/index.vue'),
-          name: 'AboutUs',
-          meta: {
-            title: 'router.about_us'
           }
         }
       ]

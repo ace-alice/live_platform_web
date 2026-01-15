@@ -1,0 +1,32 @@
+:root {
+  --main-bg-color: #08091e;
+  --card-bg-color: #272935;
+  --main-text-color: #fff;
+  --minor-text-color: #999;
+  --minor-brand-color: #1296fb;
+  --main-brand-color: #1338f8;
+  --main-reverse-text-color: #000;
+  --minor-reverse-text-color: #222;
+  --van-cell-border-color: #3d3e41 !important;
+  --vip-main-color: #ffcf6f;
+  --router-menu-bg-color: var(--card-bg-color);
+  --van-button-default-background: var(--card-bg-color) !important;
+  --van-border-color: var(--van-cell-border-color) !important;
+  --van-text-color: var(--main-text-color) !important;
+  --van-button-plain-background: var(--card-bg-color) !important;
+  --van-image-placeholder-background: var(--card-bg-color) !important;
+  --van-dropdown-menu-background: var(--card-bg-color) !important;
+  --van-grid-item-content-background: var(--card-bg-color) !important;
+  --van-tabs-nav-background: var(--card-bg-color) !important;
+  --van-background-2: var(--card-bg-color) !important;
+  --van-picker-mask-color:
+    linear-gradient(180deg, rgba(40, 42, 54, 0.9), rgba(40, 42, 54, 0.4)),
+    linear-gradient(0deg, rgba(40, 42, 54, 0.9), rgba(40, 42, 54, 0.4)) !important;
+  --van-action-sheet-cancel-padding-color: var(--main-bg-color) !important;
+  --van-button-warning-background: var(--vip-main-color) !important;
+  --van-button-warning-border-color: var(--vip-main-color) !important;
+  --van-button-warning-color: #682600;
+  --van-dialog-has-title-message-text-color: var(--minor-text-color) !important;
+  --van-notice-bar-background: transparent !important;
+  --van-notice-bar-text-color: var(--main-text-color) !important;
+}

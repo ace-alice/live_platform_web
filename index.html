@@ -1,124 +1,109 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-    <!-- web app -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="format-detection" content="telephone=no" />
-    <link rel="mask-icon" href="/pwa/pwa-svg-32.svg" color="#ffffff" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <link rel="apple-touch-icon-precomposed" href="/pwa/apple-touch-icon-180x180.png" />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="180x180"
-      href="/pwa/apple-touch-icon-180x180.png"
-    />
+  <!-- ✅ 关键：修复 iOS 缩放问题 -->
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->
 
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/pwa/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/pwa/apple-touch-icon-72x72.png" />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="114x114"
-      href="/pwa/apple-touch-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="144x144"
-      href="/pwa/apple-touch-icon-144x144.png"
-    />
-    <link rel="apple-touch-icon" sizes="114x114" href="/pwa/apple-touch-icon-114x114.png" />
-    <!--适用于 Retina 屏的 iPad-->
-    <link rel="apple-touch-icon" sizes="144x144" href="/pwa/apple-touch-icon-144x144.png" />
-    <!--适用于 Retina 屏的 iPhone-->
-    <link rel="apple-touch-icon" sizes="120x120" href="/pwa/apple-touch-icon-120x120.png" />
-    <!--适用于非 Retina 屏的 iPad-->
-    <link rel="apple-touch-icon" sizes="72x72" href="/pwa/apple-touch-icon-72x72.png" />
-    <!--适用于非 Retina 屏的 iPhone-->
-    <link rel="apple-touch-icon" sizes="57x57" href="/pwa/apple-touch-icon-57x57.png" />
+  <!-- web app -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- 推荐保留：现代标准 -->
+  <meta name="mobile-web-app-capable" content="yes">
 
-    <link rel="apple-touch-icon" sizes="152x152" href="/pwa/apple-touch-icon-152x152.png" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="dark-content" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 
-    <link rel="apple-touch-icon" sizes="60x60" href="/pwa/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" href="/ios/180.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/ios/180.png" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/pwa/apple-touch-icon-180x180.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/ios/57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ios/72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ios/114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ios/144.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/ios/114.png" />
+  <!--适用于 Retina 屏的 iPad-->
+  <link rel="apple-touch-icon" sizes="144x144" href="/pios/144.png" />
+  <!--适用于 Retina 屏的 iPhone-->
+  <link rel="apple-touch-icon" sizes="120x120" href="/ios/120.png" />
+  <!--适用于非 Retina 屏的 iPad-->
+  <link rel="apple-touch-icon" sizes="72x72" href="/ios/72.png" />
+  <!--适用于非 Retina 屏的 iPhone-->
+  <link rel="apple-touch-icon" sizes="57x57" href="/ios/57.png" />
 
-    <link rel="apple-touch-icon" href="/pwa/apple-touch-icon-180x180.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/ios/152.png" />
 
-    <!-- <link
-      rel="apple-touch-startup-image"
-      sizes="2048x1496"
-      href="icon-2048x1496.png"
-      media="screen and (min-device-width: 1025px) and (max-device-width: 2048px) and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 2)"
-    />
-    <link
-      rel="apple-touch-startup-image"
-      sizes="1536x2008"
-      href="icon-1536x2008.png"
-      media="screen and (min-device-width: 1025px) and (max-device-width: 2048px) and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 2)"
-    />
-    <link
-      rel="apple-touch-startup-image"
-      sizes="1024x748"
-      href="icon-1024x748.png"
-      media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)"
-    />
-    <link
-      rel="apple-touch-startup-image"
-      sizes="768x1004"
-      href="icon-768x1004.png"
-      media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)"
-    />
-    <link
-      rel="apple-touch-startup-image"
-      sizes="640x920"
-      href="icon-640x920.png"
-      media="screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)"
-    />
-    <link
-      rel="apple-touch-startup-image"
-      sizes="320x460"
-      href="icon-320x460.png"
-      media="screen and (max-device-width: 320)"
-    /> -->
+  <link rel="apple-touch-icon" sizes="60x60" href="/ios/60.png" />
 
-    <!-- <link
-      rel="apple-touch-startup-image"
-      sizes="2048x1496"
-      href="icon-2048x1496.png"
-      media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 2)"
-    />
-    <link
-      rel="apple-touch-startup-image"
-      sizes="1536x2008"
-      href="icon-1536x2008.png"
-      media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait) and (-webkit-min-device-pixel-ratio: 2)"
-    /> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/ios/180.png" />
 
-    <!-- theme color-->
-    <meta name="theme-color" content="#000000" />
+  <link rel="apple-touch-icon" href="/ios/180.png" />
 
-    <!--suppress HtmlUnknownTarget -->
-    <link rel="icon" href="/favicon.ico" />
-    <title><%= title %></title>
-  </head>
-  <body>
-    <!--suppress JSUnresolvedVariable -->
+  <!-- theme color-->
+  <meta name="theme-color" content="#000000" />
 
-    <noscript>
-      <strong
-        >We're sorry but doesn't work properly without JavaScript enabled. Please enable it to
-        continue.</strong
-      >
-    </noscript>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  <!--suppress HtmlUnknownTarget -->
+  <link id="favicon" rel="icon" href="/ios/60.png" />
+  <title>
+    <%= title %>
+  </title>
+
+  <!-- ===== 核心修复 CSS ===== -->
+  <style>
+    html,
+    body {
+      /* 防止 iOS 双击缩放 */
+      touch-action: manipulation;
+
+      /* 防止文字自动放大 */
+      -webkit-text-size-adjust: 100%;
+    }
+
+    input,
+    textarea {
+      font-size: 16px !important;
+      touch-action: manipulation;
+    }
+  </style>
+
+  <!-- ===== 核心修复 JS（终极关键）===== -->
+  <script>
+    (function () {
+      let lastTouchEnd = 0;
+
+      document.addEventListener('touchend', function (event) {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, { passive: false });
+
+      document.addEventListener('gesturestart', function (e) {
+        e.preventDefault();
+      });
+    })();
+  </script>
+</head>
+
+<body class="body-bg">
+  <!--suppress JSUnresolvedVariable -->
+
+  <noscript>
+    <strong>We're sorry but doesn't work properly without JavaScript enabled.
+      Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app" class="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
