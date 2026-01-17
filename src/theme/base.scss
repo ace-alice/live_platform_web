@@ -27,6 +27,7 @@ body {
   position: relative;
   overscroll-behavior-y: contain; /* 防止页面回弹行为影响 scroll */
   color: var(--main-text-color);
+  min-width: 1120px;
 }
 
 *:focus-visible {
